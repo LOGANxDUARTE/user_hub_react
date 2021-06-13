@@ -20,9 +20,15 @@ import {
   getTodosByUser
 } from './api';
 
+import {
+  getCurrentUser
+} from './auth';
+
 const App = () => {
   const [userList, setUserList] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(getCurrentUser());
+
   const [userPosts, setUserPosts] = useState([]);
   const [userTodos, setUserTodos] = useState([]);
 
